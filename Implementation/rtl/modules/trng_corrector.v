@@ -12,7 +12,7 @@ module trng_corrector (
     reg pair_state;
     reg bit0;
 
-    always @(posedge clk or negedge rst_n) begin
+    always @(posedge clk) begin
         if (!rst_n) begin
             pair_state <= 1'b0;
             bit0 <= 1'b0;
