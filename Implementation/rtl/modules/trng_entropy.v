@@ -7,6 +7,7 @@ module trng_entropy (
     output wire raw_bit
 );
 
+`ifndef SIMULATION
     wire ro3_out;
     wire ro5_out;
     wire ro7_out;
@@ -23,7 +24,7 @@ module trng_entropy (
     reg sync_reg0;
     reg sync_reg1;
 
-    always @(posedge clk or negedge rst_n) begin
+    always @(posedge clk) begin
         if (!rst_n) begin
             sync_reg0 <= 1'b0;
             sync_reg1 <= 1'b0;
@@ -32,10 +33,11 @@ module trng_entropy (
             sync_reg1 <= sync_reg0;
         end
     end
+`endif
 
 `ifdef SIMULATION
     reg sim_bit;
-    always @(posedge clk or negedge rst_n) begin
+    always @(posedge clk) begin
         if (!rst_n) begin
             sim_bit <= 1'b0;
         end else begin
