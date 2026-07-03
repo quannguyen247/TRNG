@@ -1,0 +1,16 @@
+`ifndef TRNG_DEFS_VH
+`define TRNG_DEFS_VH
+
+`define TRNG_FIFO_DEPTH 16
+`define TRNG_FIFO_ADDR_WIDTH 4
+
+`define TRNG_C_RCT 8'd30
+`define TRNG_C_APT_HIGH 11'd640
+`define TRNG_C_APT_LOW 11'd384
+
+`define TRNG_RO3_STAGES 3
+`define TRNG_RO5_STAGES 5
+`define TRNG_RO7_STAGES 7
+`define TRNG_RO11_STAGES 11
+
+`endif
