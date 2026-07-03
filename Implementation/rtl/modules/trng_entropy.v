@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+`include "trng_defs.vh"
 
 module trng_entropy (
     input wire clk,
@@ -14,10 +15,10 @@ module trng_entropy (
     wire ro11_out;
     wire combined_ro;
 
-    trng_ro #( .STAGES(3) ) u_ro3 ( .enable(enable), .out(ro3_out) );
-    trng_ro #( .STAGES(5) ) u_ro5 ( .enable(enable), .out(ro5_out) );
-    trng_ro #( .STAGES(7) ) u_ro7 ( .enable(enable), .out(ro7_out) );
-    trng_ro #( .STAGES(11) ) u_ro11 ( .enable(enable), .out(ro11_out) );
+    trng_ro #( .STAGES(`TRNG_RO3_STAGES) ) u_ro3 ( .enable(enable), .out(ro3_out) );
+    trng_ro #( .STAGES(`TRNG_RO5_STAGES) ) u_ro5 ( .enable(enable), .out(ro5_out) );
+    trng_ro #( .STAGES(`TRNG_RO7_STAGES) ) u_ro7 ( .enable(enable), .out(ro7_out) );
+    trng_ro #( .STAGES(`TRNG_RO11_STAGES) ) u_ro11 ( .enable(enable), .out(ro11_out) );
 
     assign combined_ro = ro3_out ^ ro5_out ^ ro7_out ^ ro11_out;
 
