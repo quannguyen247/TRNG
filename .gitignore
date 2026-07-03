@@ -1,0 +1,50 @@
+# OS and IDE temporary files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Python virtual environment and cache files
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Vivado / Xilinx toolchain generated files
+.Xil/
+Implementation/.Xil/
+Implementation/*.log
+Implementation/*.jou
+Implementation/*.str
+Implementation/logs/
+Implementation/*.cache/
+Implementation/*.hw/
+Implementation/*.ip_user_files/
+Implementation/*.sim/
+Implementation/*.runs/
+Implementation/*.ioplanning/
+Implementation/*.srcs/
+Implementation/*.gen/
+dfx_runtime.txt
+
+# ModelSim / QuestaSim / General Simulation outputs
+work/
+build/
+transcript
+vsim.wlf
+*.wlf
+xsim.dir/
+xsim.log
+xsim.jou
+webtalk*
+
+# Testbench simulation logs
+Implementation/testbench/trng_result.log
+
+# Reference folders
+form(donotedit)/
